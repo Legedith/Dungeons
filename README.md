@@ -45,7 +45,7 @@ Some riddles are hard, some have multiple answers.
 
 My favorite is:  _What is easy to get into, but hard to get out of ?_
 
-You can answer with: trouble or vim.
+You can answer with: trouble, relationship/love or vim.
 
 **P.s. It was just a joke... It's not hard, it's impossible to get out of vim**
 
