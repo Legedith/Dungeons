@@ -38,8 +38,11 @@ def game():
     print("\t\tYou will get one chance to ask for help from the greedy wizard. Remember, he is not your friend and you will have to pay him")
     sleep(1)
     opt = ''
-    while opt != 'y':
+    while opt not in ['y', 'yes']:
         opt = input("\t\tAre you ready to begin your adventure? (y/n): ").lower()
+        if opt == 'n' or opt == 'no':
+            print("\n\n\t\tSo long and thanks for all the fish!")
+            exit(0)
 
     print("\n\n\n\t\tWe shall begin Mighty warrior!")
     dungeons()
