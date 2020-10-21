@@ -57,6 +57,7 @@ def dungeons():
     print("\t\t1. I wanna learn everything from basics")
     print("\t\t2. I wanna learn the good stuff")
     print("\t\t3. Teach me the Dark Arts!")
+    print("\t\t4. Exit")
     print()
     sleep(1)
     num = input("\t\tEnter a number:")
@@ -75,7 +76,7 @@ def dungeons():
         os.system('printf "\t\tDoor is locked! Try reading the scroll_of_knowledge" > a_locked_door.dragon')
         os.system('printf "\t\tWhat can you catch but never throw?" > scroll_of_knowledge.dragon')
         while True:
-            opt = input("\t\tInput:").lower()
+            opt = input("\t\tInput: ").lower()
             if opt == 'cold':
                 print("\t\tCold it is! Just like your movement inside this cell. ")
                 print("\t\tRead the Scrool of Cold Movement! (Did you not see the scroll before?)")
@@ -122,7 +123,7 @@ def dungeons():
         cpMoney = "cp money.dragon"
         mvMoney = "mv money.dragon"
         while True:
-            opt = input("\t\tInput:").lower()
+            opt = input("\t\tInput: ").lower()
 
             if opt == 'w':
                 os.system('rm *.dragon')
@@ -164,6 +165,9 @@ def dungeons():
     elif num == '3':
         print("This tale is to be continued!")
 
+    elif num == '4':
+        print("Until next time...")
+
 
 def alley():
     place = 'alley'
@@ -175,7 +179,7 @@ def alley():
     print("\t\tWhat disappears as soon as  you say its name    ")
     ans = ''
     while True:
-        ans =  input("\t\tInput:").lower()
+        ans =  input("\t\tInput: ").lower()
         if ans == 'silence':
             print('\t\tA new path appeared. Go to THE GREAT HALL!')
             sleep(1)
@@ -206,7 +210,7 @@ def hall():
     os.system('printf "             What goes up, but never comes down? " > the_great_hall.dragon')
     ans1 = ''
     while True:
-        ans1 = input("\t\tInput:").lower()
+        ans1 = input("\t\tInput: ").lower()
         if ans1 == 'age':
             print('\t\tA new path appeared.')
             sleep(1)
@@ -236,7 +240,7 @@ def kitchen():
     os.system('printf "             What is easy to get into, but hard to get out of ? " > kitchen.dragon')
     ans2 = ''
     while True:
-        ans2 = input("\t\tInput:").lower()
+        ans2 = input("\t\tInput: ").lower()
         if ans2 == 'trouble' or ans2 == 'vim' or ans2 == 'realtionship':
             print("\t\tA new path appeared.")
             sleep(1)
@@ -308,7 +312,7 @@ def king():
     os.system('printf " Two bodies have I, though both joined in one. The more still I stand, the quicker I run." > king_riddle.dragon ')
     res_1 = ''
     while 1:
-        res_1 = input("             Input:").lower()
+        res_1 = input("             Input: ").lower()
         if res_1 == 'hourglass':
             print("Use 'whoami' command in game as well as in linux system to know your identity.")
         elif res_1 == 'whoami':
@@ -324,14 +328,14 @@ def touch():
     banner("SUMMONING")
     #os.system('mkdir door')
     os.system(' touch riddle.dragon')
-    os.system('printf " First think of the person who lives in disguise,\n \
-                        Who deals in secrets and tells naught but lies.\n \
-                        Next, tell me what’s always the last thing to mend,\n \
-                        The middle of middle and end of the end?\n \
-    		    And finally give me the sound often heard\n \
-    		    During the search for a hard-to-find word.\n \
-     		    Now string them together, and answer me this,\n \
-    		    Which creature would you be unwilling to kiss??" > riddle.dragon')
+    os.system('printf "First think of the person who lives in disguise,\n \
+                       Who deals in secrets and tells naught but lies.\n \
+                       Next, tell me what’s always the last thing to mend,\n \
+                       The middle of middle and end of the end?\n \
+    		       And finally give me the sound often heard\n \
+    		       During the search for a hard-to-find word.\n \
+     		       Now string them together, and answer me this,\n \
+    		       Which creature would you be unwilling to kiss??" > riddle.dragon')
 
     print("\t\tYour next task is to master the summoning spell.")
     print("\t\tYou can create forge new items (files) using the 'touch' command")
@@ -340,17 +344,38 @@ def touch():
     print("\t\tSolve the riddle in the scroll and create a dragon file using the answer.")
     opt = ''
     while True:
-        opt = input("\t\tInput:").lower()
+        opt = input("\n\t\tInput: ").lower()
         os.system(opt)
-        if 'escape' in os.listdir():
-            print("\t\tYou found a way out, It teleported you back to the dungeons\n\n\n")
-            dungeons()
+        #if 'escape' in os.listdir():
+        #    print("\t\tYou found a way out, It teleported you back to the dungeons\n\n\n")
+        #    dungeons()
 
-        elif 'spider.dragon' in os.listdir():
+        if 'spider.dragon' in os.listdir():
             print("\t\tYou created a spider!!!")
-            print("\t\tNow you have to eescape from the spider....")
+            print("\t\tNow you have to escape from the spider...")
             print("\t\tUse 'mkdir <directory_name>' command to create a new directory named escape")
+            print("\t\tand use the 'cd' command to enter it.")
+            find()
 
+
+def find():
+    banner("SECRET KEY")
+    ascii_images.ascii_key()
+    os.system('mkdir book desk chest box table barrel vase')
+    with open('book/.hidden.key', 'w') as f:
+        f.write("To use this key to unlock the door, create a directory called key and use 'cd' to enter it")
+    print("\t\tAs you escape from the spider, the door shuts behind you.")
+    print("\t\tOn the opposite end of the room, there is a door but it is locked.")
+    print("\t\tUse the 'find' command to locate the key to escape.")
+    print("\t\tUse 'find . -name' and your knowledge of wild cards to search for the key.")
+    opt = ''
+    while True:
+        opt = input("\n\t\tInput: ").lower()
+        os.system(opt)
+        
+        if 'key' in os.listdir():
+            print("\t\tYou found a way out. It teleported you back to the dungeons.\n\n\n")
+            dungeons()
 
 
 # def previous_moves():
@@ -360,7 +385,7 @@ def touch():
 #     os.system('printf " I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?  " > moves_riddle.dragon')
 #     res_2 = ''
 #     while 1:
-#         res_2 = input("             Input:").lower()
+#         res_2 = input("             Input: ").lower()
 #         if res_2 == 'echo':
 #             print("Use 'history' command  in game as well as in the linux system to see your previous commands")
 
