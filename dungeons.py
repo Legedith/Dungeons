@@ -78,7 +78,7 @@ def dungeons():
             opt = input("\t\tInput:").lower()
             if opt == 'cold':
                 print("\t\tCold it is! Just like your movement inside this cell. ")
-                print("\t\tRead the Scrool of Cold Movement! (Did you not see the scroll before?)")
+                print("\t\tRead the Scroll of Cold Movement! (Did you not see the scroll before?)")
                 os.system('touch scroll_of_cold_movement.dragon')
                 os.system('printf "             You can use the cd <roomname/directory_name> command to move through rooms\n \
              in the game and directories in the terminal.\n \
@@ -105,11 +105,11 @@ def dungeons():
         banner("ARCHERY")
         os.system('mkdir archery')
         os.chdir('archery')
-        print("\n\n\t\tSometimes you need a little more precission.")
+        print("\n\n\t\tSometimes you need a little more precision.")
         print()
         print("\t\tYou can use the cat command to view multiple files at once.")
         print("\t\tYou can write 'cat <file1> <file2> <file2>")
-        print("\t\tAnd the contents of three files will be concatinated.")
+        print("\t\tAnd the contents of three files will be concatenated.")
         sleep(2)
         print("\t\tYou can see that the current folder contains a number of files.")
         print("\t\tWith names riddleA, riddleB, riddleC and so on....")
@@ -216,7 +216,7 @@ def hall():
         elif ans1 == 'cd the_royal_kitchen':
             os.chdir('the_royal_kitchen')
             print('\n\n\n')
-            banner("THE ROYAL KICHEN")
+            banner("THE ROYAL KITCHEN")
             sleep(1)
             place = 'kitchen'
             break
@@ -237,7 +237,7 @@ def kitchen():
     ans2 = ''
     while True:
         ans2 = input("\t\tInput:").lower()
-        if ans2 == 'trouble' or ans2 == 'vim' or ans2 == 'realtionship':
+        if ans2 == 'trouble' or ans2 == 'vim' or ans2 == 'relationship':
             print("\t\tA new path appeared.")
             sleep(1)
             print("\t\tUse cd command to go to the library!")
@@ -268,7 +268,7 @@ def library():
     print("\t\tYou can use the \'pwd\' command to know your location in dungeon\n \
              as well as in the linux system.")
     sleep(1)
-    print("\t\tpwd stands for present workng directory")
+    print("\t\tpwd stands for present working directory")
     sleep(1)
     print("\t\tand shows you the name as well as the location of your current directory.")
     print("\t\t---------------------------------------------")
@@ -348,7 +348,7 @@ def touch():
 
         elif 'spider.dragon' in os.listdir():
             print("\t\tYou created a spider!!!")
-            print("\t\tNow you have to eescape from the spider....")
+            print("\t\tNow you have to escape from the spider....")
             print("\t\tUse 'mkdir <directory_name>' command to create a new directory named escape")
 
 
@@ -387,4 +387,4 @@ except KeyboardInterrupt:
     exit()
 
 
-# change cd command frfom chdir to system
+# change cd command from chdir to system
